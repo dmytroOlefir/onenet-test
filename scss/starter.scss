@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+// Customize some defaults
+$body-color: #333;
+$body-bg: #fff;
+$border-radius: .4rem;
+$success: #7952b3;
+$text: #2B3559;
+$primary: #67DE75;
+$secondary: #FF7A45;
+
+$grid-columns: 6;
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+// @import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/input-group"; // Requires forms
+// @import "bootstrap/scss/custom-forms";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/jumbotron";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/media";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/utilities";
+// @import "bootstrap/scss/print";
+
+
+//
+// Custom styles
+//
+
+@import "icon-list";
+
+body {
+  font-family: Poppins, sans-serif;
+  color: $text;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  background: $text;
+  border-radius: 99px;
+  span {
+    border-radius: 99px;
+    padding: 16px;
+    height: 100%;
+    background: $primary;
+    color: $text;
+    line-height: 1;
+    font-weight: 600;
+  }
+  svg {
+    margin: 0 16px;
+  }
+}
+
+// Style Bootstrap icons
+.bi {
+  fill: currentcolor;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+[data-para] {
+  will-change: transform;
+}
+
+.scrolldown {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background: #F8F8F4;
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    @media (min-width: 992px) {
+      font-size: 10rem;
+    }
+  }
+}
+
+.quote {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0;
+  @media (min-width: 992px) {
+    padding: 116px 0 139px;
+  }
+  &__bg-1 {
+    position: absolute;
+    top: -130px;
+    left: -70px;
+    @media (min-width: 768px) {
+      top: auto;
+      bottom: -85px;
+      left: -92px;
+    }
+    @media (min-width: 992px) {
+      bottom: -139px;
+      left: -182px;
+    }
+    .quote-mask {
+      position: absolute;
+      top: -111px;
+      left: -2px;
+      right: 0;
+      bottom: 0;
+      max-width: 280px;
+    }
+  }
+  &__bg-2 {
+    position: absolute;
+    top: -116px;
+    right: -180px;
+    @media (max-width: 992px) {
+      display: none;
+    }
+    .quote-mask {
+      position: absolute;
+      top: 0;
+      left: -2px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__img {
+    position: relative;
+    max-width: 217px;
+    margin-left: auto;
+    @media (min-width: 768px) {
+      max-width: 250px;
+    }
+    @media (min-width: 992px) {
+      max-width: 100%;
+      margin-left: 0;
+    }
+    svg {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &__photo {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  &__icon {
+    position: absolute;
+    left: 4px;
+    bottom: 7px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+    background: $secondary;
+    @media (min-width: 768px) {
+      width: 70px;
+      height: 70px;
+    }
+    @media (min-width: 992px) {
+      bottom: 10px;
+      left: 5px;
+      width: 96px;
+      height: 96px;
+      border-radius: 16px;
+    }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 60px 0 0;
+    @media (min-width: 992px) {
+      padding: 7px 0;
+    }
+  }
+  &__content {
+    padding: 24px 0;
+    @media (min-width: 992px) {
+      padding: 16px 0;
+    }
+  }
+  &__result {
+    display: inline-flex;
+    margin-bottom: 24px;
+    height: 46px;
+    border-radius: 99px;
+    overflow: hidden;
+    @media (min-width: 992px) {
+      margin-bottom: 16px;
+    }
+    .result {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 9px 0 19px;
+      color: #F8F8F4;
+      font-size: 20px;
+      letter-spacing: -0.201px;
+      font-weight: 600;
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      background: $secondary;
+    }
+    .text {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 16px;
+      font-weight: 600;
+      background: #ECEAE2;
+    }
+  }
+  &__text {
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: -0.816px;
+    @media (min-width: 768px) {
+      font-size: 22px;
+    }
+    @media (min-width: 992px) {
+      font-size: 32px;
+    }
+    span {
+      font-weight: 600;
+    }
+  }
+  &__footer {
+    @media (min-width: 992px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .company {
+      letter-spacing: 0.323px;
+      color: #6E6D85;
+      margin-bottom: 16px;
+      @media (min-width: 992px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.numbers {
+  padding: 70px 0;
+  text-align: center;
+  background: #F8F8F4;
+  @media (min-width: 992px) {
+    text-align: left;
+    padding: 120px 0 140px;
+  }
+  &__title {
+    margin-bottom: 24px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.979px;
+    line-height: 1.1;
+    @media (min-width: 992px) {
+      margin-bottom: 47px;
+      font-size: 64px;
+      width: 407px;
+    }
+  }
+  &__graph {
+    max-width: calc(100% + 40px);
+    height: auto;
+    margin: 48px -20px 0;
+    @media (min-width: 992px) {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+}
