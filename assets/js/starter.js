@@ -1,9 +1,7 @@
-import "../../node_modules/bootstrap/js/dist/util.js";
-import "../../node_modules/bootstrap/js/dist/modal.js";
-import { gsap } from "../../node_modules/gsap/index.js";
+// import { gsap } from "gsap";
+//
+// import { ScrollTrigger} from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "./inc/DrawSVGPlugin.js";
-
-import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger.js";
 
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
