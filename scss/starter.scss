@@ -315,6 +315,7 @@ img {
   padding: 70px 0;
   text-align: center;
   background: #F8F8F4;
+  overflow: hidden;
   @media (min-width: 992px) {
     text-align: left;
     padding: 120px 0 140px;
@@ -332,9 +333,9 @@ img {
     }
   }
   &__graph {
-    max-width: calc(100% + 40px);
+    max-width: calc(100% + 30px);
     height: auto;
-    margin: 48px -20px 0;
+    margin: 48px -15px 0;
     @media (min-width: 992px) {
       margin: 0;
       max-width: 100%;
